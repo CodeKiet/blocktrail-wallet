@@ -103,6 +103,12 @@
         <param name="ios-package" value="SocialSharing" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="FileTransfer">
+        <param name="ios-package" value="CDVFileTransfer" />
+    </feature>
+    <feature name="Open">
+        <param name="ios-package" value="Open" />
+    </feature>
     <name>BlockTrail Wallet</name>
     <description>
         Your personal Bitcoin wallet, powered by BTC.com
@@ -162,4 +168,6 @@
     <preference name="orientation" value="portrait" />
     <preference name="AutoHideSplashScreen" value="false" />
     <preference name="ShowSplashScreenSpinner" value="false" />
+    <preference name="UIFileSharingEnabled" value="true" />
+    <preference name="iosPersistentFileLocation" value="Compatibility" />
 </widget>

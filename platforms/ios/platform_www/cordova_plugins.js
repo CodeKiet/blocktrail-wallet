@@ -463,6 +463,30 @@ module.exports = [
         "clobbers": [
             "window.plugins.socialsharing"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-file-transfer/www/FileTransferError.js",
+        "id": "cordova-plugin-file-transfer.FileTransferError",
+        "pluginId": "cordova-plugin-file-transfer",
+        "clobbers": [
+            "window.FileTransferError"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-file-transfer/www/FileTransfer.js",
+        "id": "cordova-plugin-file-transfer.FileTransfer",
+        "pluginId": "cordova-plugin-file-transfer",
+        "clobbers": [
+            "window.FileTransfer"
+        ]
+    },
+    {
+        "file": "plugins/cordova-open/www/disusered.open.js",
+        "id": "cordova-open.Open",
+        "pluginId": "cordova-open",
+        "merges": [
+            "cordova.plugins.disusered"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -498,7 +522,9 @@ module.exports.metadata =
     "cordova-plugin-facebook4": "1.7.4",
     "cordova-plugin-globalization": "1.0.1",
     "cordova-plugin-dialogs": "1.1.2-dev",
-    "cordova-plugin-x-socialsharing": "5.1.7"
+    "cordova-plugin-x-socialsharing": "5.1.7",
+    "cordova-plugin-file-transfer": "1.6.3",
+    "cordova-open": "1.0.12"
 }
 // BOTTOM OF METADATA
 });
