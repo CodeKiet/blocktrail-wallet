@@ -1006,7 +1006,9 @@ angular.module('blocktrail.wallet')
                                             if (ionic.Platform.isIOS()) {
                                                 // syncedDataDirectory
                                                 var fileName = 'wallet-backup-' + settingsService.email.replace(/[^a-zA-Z0-9]/g, '_') + '.pdf';
-                                                return $cordovaFile.writeFile(cordova.file.documentsDirectory, fileName, buffer, true);
+                                                return $cordovaFile.writeFile(cordova.file.documentsDirectory, fileName, buffer, true).then(function () {
+                                                    return $cordovaFile.writeFile(cordova.file.syncedDataDirectory, fileName, buffer, true);
+                                                });
 
                                             } else if (ionic.Platform.isAndroid()) {
                                                 //export the backup to PDF for user to handle
