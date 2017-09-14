@@ -1007,7 +1007,16 @@ angular.module('blocktrail.wallet')
                                                 // syncedDataDirectory
                                                 var fileName = 'wallet-backup-' + settingsService.email.replace(/[^a-zA-Z0-9]/g, '_') + '.pdf';
                                                 return $cordovaFile.writeFile(cordova.file.documentsDirectory, fileName, buffer, true).then(function () {
-                                                    return $cordovaFile.writeFile(cordova.file.syncedDataDirectory, fileName, buffer, true);
+                                                    // Also store it on the synced directory for iTunes
+                                                    return $cordovaFile.writeFile(cordova.file.syncedDataDirectory, fileName, buffer, true).then(function () {
+                                                        // Open with inapp browser for more options, hopefully
+                                                        console.log(cordova.file.documentsDirectory + "/" + fileName);
+                                                        $cordovaInAppBrowser.open(
+                                                            cordova.file.documentsDirectory + "/" + fileName,
+                                                            "_system",
+                                                            "location=yes,enableViewportScale=yes,hidden=no"
+                                                        );
+                                                    });
                                                 });
 
                                             } else if (ionic.Platform.isAndroid()) {
